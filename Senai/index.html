@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro | Gensavos</title>
+
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Gensavos<span>.</span></h1>
+
+        <h2>Cadastro de Usuário</h2>
+
+        <p>Crie sua conta para acessar o sistema.</p>
+
+        <form id="formCadastro">
+
+            <label for="nome">Nome</label>
+            <input type="text" id="nome"
+                placeholder="Digite seu nome" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email"
+                placeholder="Digite seu e-mail" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha"
+                placeholder="Crie uma senha" required minlength="6">
+
+            <label for="confirmar">Confirmar senha</label>
+
+            <div class="campo-senha">
+                <input type="password" id="confirmar"
+                    placeholder="Digite a senha novamente" required>
+
+                <span id="erro-senha" class="erro"></span>
+            </div>
+
+            <button type="submit">Criar conta</button>
+
+        </form>
+
+        <p class="rodape">
+            Já possui uma conta?
+            <a href="login.html">Faça login</a>
+        </p>
+
+    </div>
+
+
+    <script>
+
+        const form = document.getElementById("formCadastro");
+
+        const senha = document.getElementById("senha");
+
+        const confirmar = document.getElementById("confirmar");
+
+        const erroSenha = document.getElementById("erro-senha");
+
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            erroSenha.textContent = "";
+
+            confirmar.classList.remove("input-erro");
+
+
+            if (senha.value !== confirmar.value) {
+
+                erroSenha.textContent = "As senhas não são iguais!";
+
+                confirmar.classList.add("input-erro");
+
+                confirmar.focus();
+
+                return;
+
+            }
+
+            alert("Cadastro realizado com sucesso!");
+
+            window.location.href = "login.html";
+
+        });
+
+    </script>
+
+</body>
+</html>

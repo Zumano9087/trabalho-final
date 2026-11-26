@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde: #263A35;
+    --creme: #F4F0E8;
+    --areia: #D7C8B0;
+    --terracota: #B9785D;
+    --grafite: #252A29;
+
+    --fundo: var(--creme);
+    --painel: #FFFFFF;
+    --texto: var(--grafite);
+    --detalhes: var(--verde);
+    --linha: var(--areia);
+}
+
+body {
+    min-height: 100vh;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 40px 20px;
+}
+
+.pagina {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.cabecalho,
+.rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cabecalho {
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--linha);
+    margin-bottom: 35px;
+}
+
+.marca {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: var(--verde);
+}
+
+.categoria {
+    color: var(--terracota);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.ficha {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 45px;
+    align-items: start;
+    background: var(--painel);
+    border: 1px solid var(--areia);
+    border-radius: 14px;
+    padding: 35px;
+    box-shadow: 0 25px 70px rgba(38, 58, 53, 0.12);
+}
+
+.capa-container {
+    position: relative;
+    width: 100%;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: var(--verde);
+    color: var(--creme);
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+.capa {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+    border: 1px solid var(--areia);
+    box-shadow: 12px 15px 30px rgba(38, 58, 53, 0.20);
+}
+
+.legenda {
+    color: var(--grafite);
+    opacity: 0.65;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.subtitulo {
+    color: var(--terracota);
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--verde);
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.15;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.autora {
+    color: var(--grafite);
+    font-size: 15px;
+}
+
+.autora strong {
+    color: var(--verde);
+}
+
+.linha {
+    height: 1px;
+    background: var(--areia);
+    margin: 28px 0;
+}
+
+h2 {
+    color: var(--verde);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.detalhes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+}
+
+.item {
+    border-left: 2px solid var(--terracota);
+    padding-left: 12px;
+}
+
+.item span,
+.rodape-ficha span {
+    color: var(--grafite);
+    opacity: 0.7;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.item p {
+    color: var(--grafite);
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.sinopse {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid var(--areia);
+}
+
+.sinopse p {
+    color: var(--grafite);
+    opacity: 0.85;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.rodape-ficha {
+    margin-top: 28px;
+    padding: 18px;
+    background: var(--verde);
+    border-radius: 5px;
+}
+
+.rodape-ficha span {
+    color: var(--creme);
+}
+
+.rodape-ficha p {
+    font-size: 12px;
+    margin-top: 8px;
+    color: var(--creme);
+}
+
+.rodape {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--areia);
+    color: var(--grafite);
+    opacity: 0.75;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 22px 12px;
+    }
+
+    .ficha {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 22px;
+    }
+
+    .capa-container {
+        max-width: 230px;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .detalhes {
+        gap: 22px 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .detalhes {
+        grid-template-columns: 1fr;
+    }
+
+    .marca {
+        letter-spacing: 2px;
+    }
+}
